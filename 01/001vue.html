@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{title}}</p>
+        <input type="button" v-on:click="button" value="点击事件">
+        <input type="text" v-on:input="tes" id="td">
+    </div>
+</body>
+</html>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            title:"我想学习vue",
+            
+        },
+        methods:{
+            button:function(){
+                this.title="不会"
+            },
+            tes:function(){
+                this.title=td.value
+            }
+        }
+    })
+</script>

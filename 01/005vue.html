@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>我的名字是：{{name}}</p>
+        <p>我的年龄是：{{age}}</p>
+        <p>我的年龄乘与3：{{age*3}}</p>
+        <img v-bind:src="imgurl" alt="">
+        <p>取值0到1之间的随机数：{{re()}}</p>
+        <p>取值1到100之间随机数：{{ree()}}</p>
+    </div>
+</body>
+</html>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            name:"李彭真",
+            age:20,
+            imgurl:"./01.png"
+        },
+        methods:{
+            getra:function(minValue,maxValue){
+               return Math.floor(Math.random()*(maxValue-minValue+1)+minValue)
+                
+            },
+            re:function(){
+                return Math.random();
+            },
+            ree:function(){
+                return this.getra(1,100);
+            }
+            
+        }
+    })
+
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <style>
+        .doem{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            border: 1px solid #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="hide">hide</button>
+        <button v-on:click="show">show</button>
+
+        <button v-on:click="tagger()">tagger</button>
+        
+        <button v-on:click="add">add</button>
+      
+
+        <div class="doem" v-show="Bollean">
+            {{cont}}
+        </div>
+    </div>
+    
+</body>
+</html>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            Bollean: true,
+            cont: 0,
+        },
+        methods:{
+            hide:function(){
+                this.Bollean=false;
+            },
+            show:function(){
+                this.Bollean=true;
+            },
+            tagger:function(){
+                if(this.Bollean){
+                    this.Bollean=false
+                }else{
+                    this.Bollean=true;
+                }
+            },
+            add : function(){
+            let that=this;
+              setInterval(function(){
+                that.cont++;
+              },10)
+            }
+            
+            
+
+        }
+    })
+
+</script>

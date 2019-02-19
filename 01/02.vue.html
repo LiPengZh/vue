@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input id="ttt" type="text" v-on:click="tit" v-on:input="ti">
+        <p>{{title}}</p>
+        <h1>{{h1}}</h1>
+    </div>
+    
+</body>
+</html>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            title:"我要好好学习",
+            h1:"你是猪吗？"
+        },
+        methods:{
+            tit:function(){
+                // alert("aaa")
+                this.title="my name is 李彭真"
+            },
+            ti:function(){
+                this.title=ttt.value
+            }
+        }
+    })
+</script>
