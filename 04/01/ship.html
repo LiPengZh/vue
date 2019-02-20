@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        .a{
+            background: red;
+        }
+        .b{
+            background: pink;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <ul>
+                <li v-for="item in stus" :class="item.class">
+                    {{ item.name }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            stus:[{name:'张三',class:'a'},{name:'王五',class:'a'},{name:'李四',class:'b'},]
+        }
+    })
+
+</script>

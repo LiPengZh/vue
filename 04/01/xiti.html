@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{name}}</p>
+        <p>我的年龄{{age}}</p>
+        <p>我的年龄乘与三{{age*3}}</p>
+      <p>0到1之间的随机数{{rand()}}</p>
+      <p>1到100之间的随即数{{random()}}</p>
+    </div>
+    
+</body>
+</html>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            name:"李",
+            age:"10",
+        },
+        methods : {
+           getRandom : function(minValue,maxValue){
+              return Math.floor(Math.random()*(maxValue-minValue+1)+minValue);
+           },
+           random : function () {
+               return this.getRandom(0,100);
+           },
+           rand:function(){
+                return Math.random()
+           }
+        }
+    })
+
+</script>
