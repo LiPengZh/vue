@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div class="app">
+        <p v-text="text">{{baidu}}</p>
+       
+    </div>
+    
+</body>
+</html>
+<script>
+    new Vue({
+        el:".app",
+        data:{
+            baidu:"百度一下",
+            text:" <a href='www.baidu.com'></a>",
+            text:"<h1>这是一段文本</h1>"
+        }
+    })
+
+</script>
