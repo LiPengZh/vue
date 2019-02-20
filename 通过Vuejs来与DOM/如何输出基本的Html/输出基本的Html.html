@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1 v-once>{{title}}</h1>
+        <p>
+            {{sayHello()}}-----
+            <a v-bind:href="link">baidu</a>
+        </p>
+        <p v-html="finishedLink"></p>
+    </div>
+    
+</body>
+</html>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            link:"https://www.baidu.com",
+            title:"Hello word",
+            finishedLink:"<a href='https://wwww.baidu.com'>百度</a> "
+        },
+        methods:{
+            sayHello:function(){
+                this.title="Hello";
+                return this.title;
+            }
+
+        }
+    })
+
+</script>

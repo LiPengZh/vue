@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+
+        <p>{{title}}</p>
+        <!-- title 的值 -->
+        <p>{{sayHello()}}</p>
+        <!-- 调用的是方法 -->
+        <p>{{showva()}}</p>
+    </div>
+    
+</body>
+</html>
+<script>
+
+    new Vue({
+        el:"#app",
+        data:{
+            title:"hello word",
+        },
+        methods:{
+            va:function(){
+                return "123"
+            },
+            sayHello:function(){
+                return this.title;
+            },
+            showva:function(){
+                return this.va()
+            }
+
+        }
+    })
+</script>

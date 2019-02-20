@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="tao">淘宝</button>
+        <button v-on:click="jing">京东</button>
+        <button v-on:click="baidu">百度</button>
+        <p>{{title}}----
+            <a v-bind:href="link">{{name}}</a>
+        </p>
+    </div>
+</body>
+</html>
+<script>
+
+    new Vue({
+        el:"#app",
+        data:{
+            name:"webling",
+            title:"Hello Word",
+            link:"https://www.baidu.com"
+        },
+        methods:{
+            tao:function(){
+                this.name="淘宝",
+                this.link="https://www.taobao.com"
+            },
+            jing:function(){
+                this.name="京东",
+                this.link="https://www.jd.com"
+            },
+            baidu:function(){
+                this.name="百度",
+                this.link="https://www.baidu.com"
+            }
+        }
+    })
+
+</script>
