@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <style>
+        .p1{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .p2{
+            width: 200px;
+            height: 200px;
+            background: yellow;
+        }
+        .p3{
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+        .p3{
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="toggle">{{btnName}}</button>
+        <p class="p1">
+            你能看见我吗？
+        </p>
+        <p class="p2" v-if="num==5">
+            你看不见我
+        </p>
+        <p class="p3" v-else-if="6">
+
+        </p>
+        <p class="p4" v-else>hello</p>
+    </div>
+    
+</body>
+</html>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            flag:true,
+            btnName:"隐藏",
+            num: 1,
+        },
+        methods:{
+           toggle:function(){
+               this.flag=!this.flag; 
+               this.btnName=this.flag ==true ? "隐藏": "显示"
+           }
+        }
+    })
+
+</script>
