@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="counter++">increase</button>
+        <button v-on:click="counter--">Decorease</button>
+        <button v-on:click="secound">secound</button>
+        <p> Counter:{{counter}}</p>
+        <p> Result:{{result()}}----{{secound}}</p>
+    </div>
+    
+</body>
+</html>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            counter:0,
+            secound:0
+        },
+        methods:{
+            result:function(){
+                return this.counter>5?  "Greater 5": "small 5"
+            }
+           
+        }
+    })
+
+
+</script>
