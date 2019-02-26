@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    
+    <div id="app">
+ 
+    </div>
+</body>
+</html>
+<script>
+    //创建组件
+    var Son={
+        template:`<div>
+            接受到父组件的数据是:{{title}}
+                <h1>1</h1>
+                <h1>2</h1>
+                <h1>3</h1>
+                <h1>4</h1>
+                <ul>
+                    <li></li>
+                </ul>
+                <button>改变显示</button>
+            </div>`,
+            //声明接受参数
+            props:['title']
+    }
+
+    //声明组件
+    var App={
+        components :{
+            son:Son  
+        },
+        template:`<div>
+            <son title="hello"></son>
+            </div>`,
+            data:function(){
+                return {
+                    xxx:'我是xxx数据'
+                }
+            }
+    };
+
+    new Vue({
+        el:"#app",
+        //声明子组件
+        components:{
+            app:App
+        },
+        template:'<app/>'
+    })
+
+</script>

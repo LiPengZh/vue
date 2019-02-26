@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    
+</body>
+</html>
+<script>
+//1.生出子，声明子，使用子
+//头组件
+var MyHeader={
+    template:'<p>我是头部</p>'
+}
+var MyBody={
+    template:'<p>我是身体</p>'
+}
+var Myfoot={
+    template:'<p>我是尾部 <button v-on:click="showNum(123)">点我</button></p>  ',
+    methods:{
+        showNum:function(num){
+            alert("我是李彭真")
+        }
+    }
+}
+    //声明入口组件
+    var App={
+        components:{
+            "my-header":MyHeader,
+            "my-body":MyBody,
+            "my-foot":Myfoot,
+        },
+        template:`
+            <div>
+                <my-header></my-header>
+                <my-body></my-body>
+                <my-foot></my-foot>
+            </div>    `
+    };
+
+
+    new Vue({
+        el:"#app",
+        components:{    //声明要用的组件们
+            // key是组件名，value是组件对象
+            app:App
+        },
+        template:'<app/>',//入口组件
+    })
+
+</script>

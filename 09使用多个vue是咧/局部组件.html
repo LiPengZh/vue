@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <list></list>
+    </div>
+    
+    
+</body>
+</html>
+<script>
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            array:["张三","李四","王五"]
+        },
+        components:{
+            "list":{
+                data:function(){
+                    return {
+                        array:["张三1","李四1","王五1"]
+                    }
+                },
+                template:` <ul>
+                        <li  @click="test" v-for="item in array">{{item}}</li>
+                            </ul> `,
+                methods:{
+                    test:function(){
+                        alert("111")
+                    }
+                }
+            }
+        }
+    })
+
+
+</script>
